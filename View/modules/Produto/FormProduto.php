@@ -35,7 +35,7 @@
             <label for="categoria_produto"> Categoria: </label>
             <select name="categoria_produto">
                 <?php foreach($model->lista_categorias as $categoria):?>
-                    <option value="<?= $categoria['id']?>" <?= ($categoria['id'] == $model->id) ? 'selected' : " " ?> > 
+                    <option value="<?= $categoria['id']?>" <?= ($categoria['id'] == $model->id_categoria_produto) ? 'selected' : " " ?> > 
                         <?= $categoria['descricao'] ?> 
                     </option>
                 <?php endforeach?>

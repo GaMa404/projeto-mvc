@@ -62,7 +62,7 @@ class FuncionarioDAO
     {
         include_once 'Model/FuncionarioModel.php';
 
-        $sql = 'SELECT f.id, f.nome, f.data_nascimento, f.rg, f.cpf, f.sexo, c.descricao AS cargo
+        $sql = 'SELECT f.id, f.nome, f.data_nascimento, f.rg, f.cpf, f.sexo, f.id_cargo, c.descricao AS cargo
         FROM funcionario f
         JOIN cargo c ON (c.id = f.id_cargo)
         WHERE f.id=?';

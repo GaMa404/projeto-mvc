@@ -35,15 +35,15 @@
             <br> <br>
 
             <label for="sexo">Sexo:</label>
-            <input type="radio" name="sexo" id="sexo" value="Masculino" /> Masculino
-            <input type="radio" name="sexo" id="sexo" value="Feminino" /> Feminino 
+            <input type="radio" name="sexo" id="sexo" value="Masculino" checked="<?= ($model->sexo == "Masculino") ? 'checked' : " " ?>" /> Masculino
+            <input type="radio" name="sexo" id="sexo" value="Feminino" checked="<?= ($model->sexo == "Feminino") ? 'checked' : " " ?>" /> Feminino 
 
             <br> <br>
 
             <label for="cargo"> Cargo: </label>
             <select name="cargo">
                 <?php foreach($model->lista_cargo as $cargo):?>
-                    <option value="<?=$cargo['id']?>" <?= ($cargo['id'] == $model->id) ? 'selected' : " " ?> > 
+                    <option value="<?=$cargo['id']?>" <?= ($cargo['id'] == $model->id_cargo) ? 'selected' : " " ?> > 
                         <?= $cargo['descricao']?> 
                     </option>
                 <?php endforeach ?> 

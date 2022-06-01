@@ -57,7 +57,7 @@ class ProdutoDAO
     {
         include_once 'Model/ProdutoModel.php';
 
-        $sql = 'SELECT p.id, p.nome, p.descricao, p.preco, cp.descricao AS categoria 
+        $sql = 'SELECT p.id, p.nome, p.descricao, p.preco, p.id_categoria_produto, cp.descricao AS categoria 
                 FROM produto p 
                 JOIN categoria_produto cp ON (cp.id = p.id_categoria_produto)
                 WHERE p.id=?';
