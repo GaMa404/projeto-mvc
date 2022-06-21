@@ -2,7 +2,7 @@
 
 class ProdutoModel
 {
-    public $id, $nome, $descricao, $preco;
+    public $id, $nome, $descricao, $preco, $id_categoria_produto;
 
     public $lista_categorias;
     
