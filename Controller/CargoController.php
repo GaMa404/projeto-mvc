@@ -4,8 +4,6 @@ class CargoController
 {
     public static function index()
     {
-        include 'Model/CargoModel.php';
-
         $model = new CargoModel();
         $model->getAllRows();
 
@@ -14,7 +12,6 @@ class CargoController
 
     public static function form()
     {
-        include 'Model/CargoModel.php';
         $model = new CargoModel();
 
         if(isset($_GET['id']))
@@ -25,8 +22,6 @@ class CargoController
 
     public static function save()
     {
-        include 'Model/CargoModel.php';
-
         $cargo = new CargoModel();
 
         $cargo->id = $_POST['id'];
@@ -38,8 +33,6 @@ class CargoController
 
     public static function delete()
     {
-        include 'Model/CargoModel.php';
-
         $model = new CargoModel();
 
         $model->delete( (int) $_GET['id'] );

@@ -4,8 +4,6 @@ class CategoriaProdutoController
 {
     public static function index()
     {
-        include 'Model/CategoriaProdutoModel.php';
-
         $model = new CategoriaProdutoModel();
         $model->getAllRows();
 
@@ -14,7 +12,6 @@ class CategoriaProdutoController
 
     public static function form()
     {
-        include 'Model/CategoriaProdutoModel.php';
         $model = new CategoriaProdutoModel();
 
         if(isset($_GET['id']))
@@ -25,8 +22,6 @@ class CategoriaProdutoController
 
     public static function save()
     {
-        include 'Model/CategoriaProdutoModel.php';
-
         $categoria_produto = new CategoriaProdutoModel();
 
         $categoria_produto->id = $_POST['id'];
@@ -38,8 +33,6 @@ class CategoriaProdutoController
 
     public static function delete()
     {
-        include 'Model/CategoriaProdutoModel.php';
-
         $model = new CategoriaProdutoModel();
 
         $model->delete( (int) $_GET['id'] );

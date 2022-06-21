@@ -10,8 +10,6 @@ class PessoaModel{
 
     public function save()
     {
-        include 'DAO/PessoaDAO.php';
-
         $dao = new PessoaDAO();
 
         if(empty($this->id))
@@ -30,8 +28,6 @@ class PessoaModel{
 
     public function getAllRows()
     {
-        include 'DAO/PessoaDAO.php';
-
         $dao = new PessoaDAO();
 
         $this->rows = $dao->select();
@@ -39,8 +35,6 @@ class PessoaModel{
 
     public function getById(int $id)
     {
-        include 'DAO/PessoaDAO.php';
-
         $dao = new PessoaDAO();
 
         $obj = $dao->selectById($id); 
@@ -50,8 +44,6 @@ class PessoaModel{
 
     public function delete(int $id)
     {
-        include 'DAO/PessoaDAO.php';
-
         $dao = new PessoaDAO();
 
         $dao->delete($id);

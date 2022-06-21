@@ -8,8 +8,6 @@ class CargoModel
 
     public function save()
     {
-        include 'DAO/CargoDAO.php';
-
         $dao = new CargoDAO();
 
         if(empty($this->id))
@@ -27,8 +25,6 @@ class CargoModel
 
     public function getAllRows()
     {
-        include 'DAO/CargoDAO.php';
-
         $dao = new CargoDAO();
 
         $this->rows = $dao->select();
@@ -36,8 +32,6 @@ class CargoModel
 
     public function getById(int $id)
     {
-        include 'DAO/CargoDAO.php';
-
         $dao = new CargoDAO();
 
         $obj = $dao->selectById($id);
@@ -47,8 +41,6 @@ class CargoModel
 
     public function delete(int $id)
     {
-        include 'DAO/CargoDAO.php';
-
         $dao = new CargoDAO();
 
         $dao->delete($id);

@@ -10,8 +10,6 @@ class FuncionarioModel
 
    public function save()
    {
-        include 'DAO/FuncionarioDAO.php';
-
         $dao = new FuncionarioDAO;
 
         if(empty($this->id))
@@ -29,7 +27,6 @@ class FuncionarioModel
 
    public function getAllCargos()
     {
-        include 'DAO/CargoDAO.php';
         $dao = new CargoDAO();
 
         return $dao->select();
@@ -37,8 +34,6 @@ class FuncionarioModel
 
    public function getAllRows()
    {
-       include 'DAO/FuncionarioDAO.php';
-
        $dao = new FuncionarioDAO();
 
        $this->rows = $dao->select();
@@ -46,8 +41,6 @@ class FuncionarioModel
 
    public function getById(int $id)
    {
-        include 'DAO/FuncionarioDAO.php';
-
         $dao = new FuncionarioDAO();
 
         $obj = $dao->selectById($id);
@@ -57,8 +50,6 @@ class FuncionarioModel
 
    public function delete(int $id)
    {
-       include 'DAO/FuncionarioDAO.php';
-
        $dao = new FuncionarioDAO();
 
        $dao->delete($id);
