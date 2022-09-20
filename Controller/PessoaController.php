@@ -8,13 +8,17 @@
           chamar outra Controller.
          */
 
-class PessoaController{
+namespace ProjetoMVC\Controller;
+
+use ProjetoMVC\Model\PessoaModel;
+
+class PessoaController extends Controller{
     public static function index()
     {
         $model = new PessoaModel();
         $model->getAllRows();
 
-        include 'View/modules/Pessoa/ListarPessoas.php';
+        parent::render('Pessoa/ListarPessoa', $model);
     }
 
     public static function form()
@@ -25,7 +29,7 @@ class PessoaController{
             $model = $model->getById( (int) $_GET['id']); // Typecast e obtendo o model preenchido vindo da DAO.
             // Para saber mais sobre Typecast, leia: https://tiago.blog.br/type-cast-ou-conversao-de-tipos-do-php-isso-pode-te-ajudar-muito/
 
-        include 'View/modules/Pessoa/FormPessoas.php';
+        parent::render('Pessoa/FormPessoa', $model);
     }
 
     public static function save()

@@ -1,13 +1,17 @@
 <?php 
 
-class CategoriaProdutoController
+namespace ProjetoMVC\Controller;
+
+use ProjetoMVC\Model\CategoriaProdutoModel;
+
+class CategoriaProdutoController extends Controller
 {
     public static function index()
     {
         $model = new CategoriaProdutoModel();
         $model->getAllRows();
 
-        include 'View/modules/CategoriaProduto/ListarCategoriaProduto.php';
+        parent::render('CategoriaProduto/ListarCategoriaProduto', $model);
     }
 
     public static function form()
@@ -17,7 +21,7 @@ class CategoriaProdutoController
         if(isset($_GET['id']))
             $model = $model->getById( (int) $_GET['id']);
 
-        include 'View/modules/CategoriaProduto/FormCategoriaProduto.php';
+        parent::render('CategoriaProduto/FormCategoriaProduto', $model);
     }
 
     public static function save()

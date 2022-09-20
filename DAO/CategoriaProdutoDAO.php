@@ -1,14 +1,14 @@
 <?php
 
-class CategoriaProdutoDAO
-{
-    private $conexao;
+namespace ProjetoMVC\DAO;
 
+use ProjetoMVC\Model\CategoriaProdutoModel;
+
+class CategoriaProdutoDAO extends DAO
+{
     public function __construct()
     {
-        include_once 'MySQL.php';
-
-        $this->conexao = new MySQL();
+        parent::__construct();
     }
 
     public function insert(CategoriaProdutoModel $model)

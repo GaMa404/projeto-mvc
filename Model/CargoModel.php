@@ -1,11 +1,13 @@
 <?php
 
+namespace ProjetoMVC\Model;
+
+use ProjetoMVC\DAO\CargoDAO;
+
 class CargoModel
 {
     public $id, $descricao;
-
-    public $rows;
-
+    
     public function save()
     {
         $dao = new CargoDAO();

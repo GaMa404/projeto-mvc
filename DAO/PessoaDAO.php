@@ -1,14 +1,14 @@
 <?php
 
-class PessoaDAO{
+namespace ProjetoMVC\DAO;
 
-    private $conexao;
+use ProjetoMVC\Model\PessoaModel;
 
+class PessoaDAO extends DAO
+{
     public function __construct()
     {
-        include 'MySQL.php';
-
-        $this->conexao = new MySQL();
+       parent::__construct();
     }
     
     public function insert(PessoaModel $model){

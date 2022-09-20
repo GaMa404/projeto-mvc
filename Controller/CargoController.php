@@ -1,13 +1,17 @@
 <?php 
 
-class CargoController
+namespace ProjetoMVC\Controller;
+
+use ProjetoMVC\Model\CargoModel;
+
+class CargoController extends Controller
 {
     public static function index()
     {
         $model = new CargoModel();
         $model->getAllRows();
 
-        include 'View/modules/Cargo/ListarCargo.php';
+        parent::render('Cargo/ListarCargo', $model);
     }
 
     public static function form()
@@ -17,7 +21,7 @@ class CargoController
         if(isset($_GET['id']))
             $model = $model->getById( (int) $_GET['id']);
 
-        include 'View/modules/Cargo/FormCargo.php';
+            parent::render('Cargo/FormCargo', $model);
     }
 
     public static function save()

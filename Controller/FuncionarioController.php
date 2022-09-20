@@ -1,13 +1,17 @@
 <?php
 
-class FuncionarioController
+namespace ProjetoMVC\Controller;
+
+use ProjetoMVC\Model\FuncionarioModel;
+
+class FuncionarioController extends Controller
 {
     public static function index()
     {
         $model = new FuncionarioModel();
         $model->getAllRows();
 
-        include 'View/modules/Funcionario/ListarFuncionario.php';
+        parent::render('Pessoa/ListarFuncionario', $model);
     }
     
     public static function form()
@@ -19,7 +23,7 @@ class FuncionarioController
 
         $model->lista_cargo = $model->getAllCargos();
 
-        include 'View/modules/Funcionario/FormFuncionario.php';
+        parent::render('Pessoa/FormFuncionario', $model);
     }
 
     public static function save()

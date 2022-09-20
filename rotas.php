@@ -1,12 +1,15 @@
 <?php
 
-$uri_parse = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
+use ProjetoMVC\Controller\
+{
+    PessoaController,
+    ProdutoController,
+    CategoriaProdutoController,
+    CargoController,
+    FuncionarioController
+};
 
-include 'Controller/PessoaController.php';
-include 'Controller/ProdutoController.php';
-include 'Controller/CategoriaProdutoController.php';
-include 'Controller/FuncionarioController.php';
-include 'Controller/CargoController.php';
+$uri_parse = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
 switch($uri_parse)
 {

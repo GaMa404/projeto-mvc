@@ -1,13 +1,17 @@
 <?php 
 
-class ProdutoController
+namespace ProjetoMVC\Controller;
+
+use ProjetoMVC\Model\ProdutoModel;
+
+class ProdutoController extends Controller
 {
     public static function index()
     {
         $model = new ProdutoModel();
         $model->getAllRows();
 
-        include 'View/modules/Produto/ListarProdutos.php';
+        parent::render('Pessoa/ListarProduto', $model);
     }
 
     public static function form()
@@ -19,7 +23,7 @@ class ProdutoController
             
         $model->lista_categorias = $model->getAllCategorias();
 
-        include 'View/modules/Produto/FormProduto.php';
+        parent::render('Pessoa/FormProduto', $model);
     }
 
     public static function save()

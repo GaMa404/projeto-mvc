@@ -1,14 +1,14 @@
 <?php
 
-class CargoDAO
-{
-    private $conexao;
+namespace ProjetoMVC\DAO;
 
+use ProjetoMVC\Model\CargoModel;
+
+class CargoDAO extends DAO
+{
     public function __construct()
     {
-        include_once 'MySQL.php';
-
-        $this->conexao = new MySQL();
+        parent::__construct();
     }
 
     public function insert(CargoModel $model)

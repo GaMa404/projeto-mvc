@@ -1,10 +1,12 @@
 <?php
 
+namespace ProjetoMVC\Model;
+
+use ProjetoMVC\DAO\CategoriaProdutoDAO;
+
 class CategoriaProdutoModel
 {
     public $id, $descricao;
-
-    public $rows;
 
     public function save()
     {

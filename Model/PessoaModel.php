@@ -1,12 +1,14 @@
 <?php
 
-class PessoaModel{
+namespace ProjetoMVC\Model;
+
+use ProjetoMVC\DAO\PessoaDAO;
+
+class PessoaModel extends Model{
 
     // Atributos (campos do banco de dados)
     public $id, $nome, $rg, $cpf, $telefone;
     public $data_nascimento, $email, $endereco;
-
-    public $rows;
 
     public function save()
     {

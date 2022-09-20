@@ -1,12 +1,18 @@
 <?php
 
-class ProdutoModel
+namespace ProjetoMVC\Model;
+
+use ProjetoMVC\DAO\
+{
+    ProdutoDAO,
+    CategoriaProdutoDAO
+};
+
+class ProdutoModel extends Model
 {
     public $id, $nome, $descricao, $preco, $id_categoria_produto;
 
     public $lista_categorias;
-    
-    public $rows;
 
     public function save()
     {

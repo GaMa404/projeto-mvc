@@ -1,12 +1,18 @@
 <?php
 
+namespace ProjetoMVC\Model;
+
+use ProjetoMVC\DAO\
+{
+    FuncionarioDAO,
+    CargoDAO
+};
+
 class FuncionarioModel
 {
    public $id, $nome, $data_nascimento, $rg, $cpf, $sexo, $id_cargo;
 
    public $lista_cargo;
-
-   public $rows;
 
    public function save()
    {

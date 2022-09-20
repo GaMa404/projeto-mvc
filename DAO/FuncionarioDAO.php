@@ -1,14 +1,14 @@
 <?php
 
-class FuncionarioDAO
-{
-    private $conexao;
+namespace ProjetoMVC\DAO;
 
+use ProjetoMVC\Model\FuncionarioModel;
+
+class FuncionarioDAO extends DAO
+{
     public function __construct()
     {
-        include 'MySQL.php';
-
-        $this->conexao = new MySQL();
+        parent::__construct();
     }
 
 
