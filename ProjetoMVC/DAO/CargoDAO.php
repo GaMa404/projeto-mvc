@@ -1,19 +1,20 @@
 <?php
 
 namespace ProjetoMVC\DAO;
+use \PDO;
 
-use ProjetoMVC\Model\CategoriaProdutoModel;
+use ProjetoMVC\Model\CargoModel;
 
-class CategoriaProdutoDAO extends DAO
+class CargoDAO extends DAO
 {
     public function __construct()
     {
         parent::__construct();
     }
 
-    public function insert(CategoriaProdutoModel $model)
+    public function insert(CargoModel $model)
     {
-        $sql = 'INSERT INTO categoria_produto (descricao) VALUES (?)';
+        $sql = 'INSERT INTO cargo (descricao) VALUES (?)';
 
         $stmt = $this->conexao->prepare($sql);
         
@@ -22,45 +23,46 @@ class CategoriaProdutoDAO extends DAO
         $stmt->execute();
     }
 
-    public function update(CategoriaProdutoModel $model)
+    public function update(CargoModel $model)
     {
-        $sql = 'UPDATE categoria_produto SET descricao=? WHERE id=?';
+        $sql = 'UPDATE cargo SET descricao=? WHERE id = ?';
 
         $stmt = $this->conexao->prepare($sql);
 
         $stmt->bindValue(1, $model->descricao);
         $stmt->bindValue(2, $model->id);
-
+        
         $stmt->execute();
     }
 
     public function select()
     {
-        $sql = 'SELECT * FROM categoria_produto';
+        $sql = 'SELECT * FROM cargo';
 
         $stmt = $this->conexao->prepare($sql);
 
         $stmt->execute();
 
         return $stmt->fetchAll();
-    }   
-
+    }
+    
     public function selectById(int $id)
     {
-        include_once 'Model/CategoriaProdutoModel.php';
+        include_once 'Model/CargoModel.php';
 
-        $sql = 'SELECT * FROM categoria_produto WHERE id=?';
+        $sql = 'SELECT * FROM cargo WHERE id=?';
 
         $stmt = $this->conexao->prepare($sql);
+
         $stmt->bindValue(1, $id);
         $stmt->execute();
 
-        return $stmt->fetchObject("CategoriaProdutoModel");
+        return $stmt->fetchObject("ProjetoMVC\Model\CargoModel");
     }
 
     public function delete(int $id)
     {
-        $sql = 'DELETE FROM categoria_produto WHERE id=?';
+        $sql = 'DELETE FROM cargo WHERE id=?';
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $id);

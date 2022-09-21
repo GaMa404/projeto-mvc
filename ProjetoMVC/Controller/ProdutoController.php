@@ -11,7 +11,7 @@ class ProdutoController extends Controller
         $model = new ProdutoModel();
         $model->getAllRows();
 
-        parent::render('Pessoa/ListarProduto', $model);
+        parent::render('Produto/ListarProduto', $model);
     }
 
     public static function form()
@@ -23,7 +23,7 @@ class ProdutoController extends Controller
             
         $model->lista_categorias = $model->getAllCategorias();
 
-        parent::render('Pessoa/FormProduto', $model);
+        parent::render('Produto/FormProduto', $model);
     }
 
     public static function save()

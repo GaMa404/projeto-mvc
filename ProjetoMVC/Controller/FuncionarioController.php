@@ -11,7 +11,7 @@ class FuncionarioController extends Controller
         $model = new FuncionarioModel();
         $model->getAllRows();
 
-        parent::render('Pessoa/ListarFuncionario', $model);
+        parent::render('Funcionario/ListarFuncionario', $model);
     }
     
     public static function form()
@@ -23,7 +23,7 @@ class FuncionarioController extends Controller
 
         $model->lista_cargo = $model->getAllCargos();
 
-        parent::render('Pessoa/FormFuncionario', $model);
+        parent::render('Funcionario/FormFuncionario', $model);
     }
 
     public static function save()

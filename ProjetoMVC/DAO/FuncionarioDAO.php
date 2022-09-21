@@ -1,6 +1,7 @@
 <?php
 
 namespace ProjetoMVC\DAO;
+use \PDO;
 
 use ProjetoMVC\Model\FuncionarioModel;
 
@@ -72,7 +73,7 @@ class FuncionarioDAO extends DAO
         $stmt->bindValue(1, $id);
         $stmt->execute();
 
-        return $stmt->fetchObject("FuncionarioModel");
+        return $stmt->fetchObject("ProjetoMVC\Model\FuncionarioModel");
     }
 
     public function delete(int $id)

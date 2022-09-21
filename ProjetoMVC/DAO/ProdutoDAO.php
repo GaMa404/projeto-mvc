@@ -1,6 +1,7 @@
 <?php
 
 namespace ProjetoMVC\DAO;
+use \PDO;
 
 use ProjetoMVC\Model\ProdutoModel;
 
@@ -66,7 +67,7 @@ class ProdutoDAO extends DAO
         $stmt->bindValue(1, $id);
         $stmt->execute();
 
-        return $stmt->fetchObject("ProdutoModel");
+        return $stmt->fetchObject("ProjetoMVC\Model\ProdutoModel");
     }
 
     public function delete(int $id)

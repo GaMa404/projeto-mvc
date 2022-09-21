@@ -14,7 +14,7 @@ abstract class Controller
         }
         else
         {
-            exit('Arquivo da View não encontrado. Arquivo: ' . $view);
+            exit('Arquivo da View não encontrado. Arquivo: ' . $arquivo_view);
         }
     }
 }
